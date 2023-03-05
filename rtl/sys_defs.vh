@@ -15,7 +15,6 @@
 `define MEM_32BIT_LINES        (`MEM_SIZE_IN_BYTES/4)
 
 
-// the Alpha register file zero register, any read of this register always
 // returns a zero value, and any write to this register is thrown away
 //
 `define ZERO_REG        5'd00
