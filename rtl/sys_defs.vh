@@ -59,7 +59,7 @@
 `define SLT_INST    {3'h2, 7'h00}
 `define SLTU_INST   {3'h3, 7'h00}
 `define MUL_INST    {3'h0, 7'h00}
-`define MULHU_INST  {3'h1, 7'h00}
+`define MULHU_INST  {3'h3, 7'h00}
 
 //
 //{funct3}, I-TYPE
