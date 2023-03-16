@@ -124,6 +124,14 @@ initial begin
     rst=0;
     for(int i=0;i<50000;i++) begin
         @(posedge clk);    
+	func = 10;
+        opa = 100;
+        opb = 115;
+        #20ns;
+        func = 11;
+        opa = 100;
+        opb = 115;
+        #20ns;
     end
     $stop;
 end
