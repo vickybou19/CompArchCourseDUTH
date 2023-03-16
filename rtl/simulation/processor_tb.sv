@@ -82,7 +82,15 @@ processor proc_module(.clk(clk),
                       .mem_wb_NPC(mem_wb_NPC),
                       .mem_wb_IR(mem_wb_IR),
                       .mem_wb_valid_inst(mem_wb_valid_inst));
-
+logic [31:0] opa,opb;
+logic [4:0] func;	
+logic [31:0] result;
+	
+	alu alu(.opa(opa), 
+		.opb(opb),
+		.func(func),
+		.result(result));
+	
 logic [3:0] mem2proc_response_im;
 logic [3:0] mem2proc_tag_im;
 
@@ -124,14 +132,14 @@ initial begin
     rst=0;
     for(int i=0;i<50000;i++) begin
         @(posedge clk);    
-	func = 10;
         opa = 100;
         opb = 115;
-        #20ns;
-        func = 11;
+	func = `ALU_MUL;
+        #100ns
         opa = 100;
         opb = 115;
-        #20ns;
+        func = `ALU_MULHU;
+        #100ns;
     end
     $stop;
 end
