@@ -132,12 +132,12 @@ initial begin
     rst=0;
     for(int i=0;i<50000;i++) begin
         @(posedge clk);    
-        opa = 100;
-        opb = 115;
+        opa = 1000000000;
+        opb = 1000000000;
 	func = `ALU_MUL;
         #100ns
-        opa = 100;
-        opb = 115;
+        opa = 1000000000;
+        opb = 1000000000;
         func = `ALU_MULHU;
         #100ns;
     end
